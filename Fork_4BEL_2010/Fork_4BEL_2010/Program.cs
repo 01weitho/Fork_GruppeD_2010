@@ -19,16 +19,8 @@ namespace Fork_4BEL_2010
         static string Hexmethode(String Bin)
         {
             String Hex = "";
-            char[] Array = Bin.ToCharArray();
-            int dec = 0;
+            int dec = Convert.ToInt32(Dezimalmethode(Bin)); ;
             int x = 1;
-            for (int i = 0; i < Bin.Length; i++)
-            {
-                if (Array[i] == '1')
-                {
-                    dec += Convert.ToInt32(Math.Pow(2, Bin.Length - i - 1));
-                }
-            }
             while (dec != 0)
             {
                 if ((dec %16 < 10))
