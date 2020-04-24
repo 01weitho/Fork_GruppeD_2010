@@ -9,7 +9,7 @@ namespace Fork_4BEL_2010
     {
         static void Main(string[] args)
         {
-            String Binaerwert=string.Empty;
+           String Binaerwert=string.Empty;
             String Ausgabe=string.Empty;
             String AuswahlUmrechnung = start();
 
@@ -47,7 +47,7 @@ namespace Fork_4BEL_2010
             Console.WriteLine("Ergebnis=" + Ausgabe + "");
             Console.ReadKey();
         }
-
+      
         static string start()
         { 
             Int16 Auswahl=0;
@@ -78,5 +78,26 @@ namespace Fork_4BEL_2010
 
             return Rueckgabe;
         }
+          static string Binzahl()
+        {
+            string Eingabe = "";
+            bool keinFehler = true;
+
+            Console.WriteLine();
+            Console.Write("Binärzahl eingeben: ");
+            Eingabe = Console.ReadLine();
+
+            char[] CEingabe = Eingabe.ToCharArray();
+
+            for (int i = 0; i < Eingabe.Length & keinFehler == true; i++)
+            {
+                if(!(CEingabe[i] == '1' || CEingabe[i] == '0'))
+                {
+                    Eingabe = "Fehler";
+                    keinFehler = false;
+                }
+            }
+            return Eingabe;
     }
+}
 }
