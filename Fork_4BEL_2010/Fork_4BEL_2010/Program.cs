@@ -9,6 +9,7 @@ namespace Fork_4BEL_2010
     {
         static void Main(string[] args)
         {
+<<<<<<< HEAD
            String Binaerwert=string.Empty;
             String Ausgabe=string.Empty;
             String AuswahlUmrechnung = start();
@@ -100,6 +101,62 @@ namespace Fork_4BEL_2010
 
             return Hex;
         }
+
+        static string Dezimalmethode(string a)
+        {
+
+=======
+            string hallo = "1010";
+            Dezimalmethode(hallo);
+
+            Console.ReadKey();
+        }
+
+        static string Dezimalmethode(string a)
+       {
+           
+>>>>>>> 68ed56269f2dc869de1a77f0ca51700398071e5d
+            string bin = a;
+            String Dezimalwert;
+            int Dezimalint = 0;
+            int bo = 0;
+<<<<<<< HEAD
+
+=======
+             
+>>>>>>> 68ed56269f2dc869de1a77f0ca51700398071e5d
+
+            byte[] bitearray = Encoding.ASCII.GetBytes(bin);
+
+            for (int i = 0; i < bitearray.Length; i++)
+            {
+                if (bitearray[i] == 48)
+                {
+
+                    bitearray[i] = 0;
+                }
+                else
+                {
+                    bitearray[i] = 1;
+                }
+            }
+<<<<<<< HEAD
+
+            for (int i = bitearray.Length - 1; i > -1; i--)
+=======
+            
+            for (int i =bitearray.Length-1 ;i >-1; i--)
+>>>>>>> 68ed56269f2dc869de1a77f0ca51700398071e5d
+            {
+                Dezimalint += bitearray[i] * Convert.ToInt32(Math.Pow(2, bo));
+                bo++;
+            }
+
+            Dezimalwert = Convert.ToString(Dezimalint);
+
+<<<<<<< HEAD
+            return Dezimalwert;
+        }
       
         static string start()
         { 
@@ -151,6 +208,10 @@ namespace Fork_4BEL_2010
                 }
             }
             return Eingabe;
+=======
+        return Dezimalwert;
+    }
+>>>>>>> 68ed56269f2dc869de1a77f0ca51700398071e5d
     }
 }
 }
