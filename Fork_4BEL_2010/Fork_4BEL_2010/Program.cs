@@ -9,12 +9,7 @@ namespace Fork_4BEL_2010
     {
         static void Main(string[] args)
         {
-            string Eingabee = "";
 
-            Eingabee = Binzahl();
-
-            Console.WriteLine(Eingabee);
-            Console.ReadKey();
         }
 
         static string Binzahl()
