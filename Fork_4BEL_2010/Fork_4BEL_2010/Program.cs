@@ -9,13 +9,12 @@ namespace Fork_4BEL_2010
     {
         static void Main(string[] args)
         {
-<<<<<<< HEAD
-           String Binaerwert=string.Empty;
-            String Ausgabe=string.Empty;
+            String Binaerwert = string.Empty;
+            String Ausgabe = string.Empty;
             String AuswahlUmrechnung = start();
 
             switch (AuswahlUmrechnung)
-            { 
+            {
                 case "Fehler":
                     //nichts
                     break;
@@ -61,17 +60,17 @@ namespace Fork_4BEL_2010
             int x = 1;
             while (dec != 0)
             {
-                if ((dec %16 < 10))
+                if ((dec % 16 < 10))
                 {
                     Hex = Hex.Insert(0, Convert.ToString(dec % 16));
                 }
                 else
                 {
-                    if  ((dec % 16 == 10))
+                    if ((dec % 16 == 10))
                     {
-                        Hex = Hex.Insert(0,"A");
+                        Hex = Hex.Insert(0, "A");
                     }
-                    else if (dec %16== 11)
+                    else if (dec % 16 == 11)
                     {
                         Hex = Hex.Insert(0, "B");
                     }
@@ -94,7 +93,7 @@ namespace Fork_4BEL_2010
                     }
 
                 }
-                dec = dec - dec%16;
+                dec = dec - dec % 16;
                 dec = dec / 16;
                 x++;
             }
@@ -105,26 +104,10 @@ namespace Fork_4BEL_2010
         static string Dezimalmethode(string a)
         {
 
-=======
-            string hallo = "1010";
-            Dezimalmethode(hallo);
-
-            Console.ReadKey();
-        }
-
-        static string Dezimalmethode(string a)
-       {
-           
->>>>>>> 68ed56269f2dc869de1a77f0ca51700398071e5d
             string bin = a;
             String Dezimalwert;
             int Dezimalint = 0;
             int bo = 0;
-<<<<<<< HEAD
-
-=======
-             
->>>>>>> 68ed56269f2dc869de1a77f0ca51700398071e5d
 
             byte[] bitearray = Encoding.ASCII.GetBytes(bin);
 
@@ -140,13 +123,8 @@ namespace Fork_4BEL_2010
                     bitearray[i] = 1;
                 }
             }
-<<<<<<< HEAD
 
             for (int i = bitearray.Length - 1; i > -1; i--)
-=======
-            
-            for (int i =bitearray.Length-1 ;i >-1; i--)
->>>>>>> 68ed56269f2dc869de1a77f0ca51700398071e5d
             {
                 Dezimalint += bitearray[i] * Convert.ToInt32(Math.Pow(2, bo));
                 bo++;
@@ -154,14 +132,13 @@ namespace Fork_4BEL_2010
 
             Dezimalwert = Convert.ToString(Dezimalint);
 
-<<<<<<< HEAD
             return Dezimalwert;
         }
-      
+
         static string start()
-        { 
-            Int16 Auswahl=0;
-            String Rueckgabe=string.Empty;
+        {
+            Int16 Auswahl = 0;
+            String Rueckgabe = string.Empty;
 
             Console.WriteLine("Umrechnung von Binär in in Zahlen der Basis 10 der");
 
@@ -176,7 +153,7 @@ namespace Fork_4BEL_2010
             }
 
             switch (Auswahl)
-            { 
+            {
                 case 1:
                     Rueckgabe = "zuBasis10";
                     break;
@@ -188,7 +165,7 @@ namespace Fork_4BEL_2010
 
             return Rueckgabe;
         }
-          static string Binzahl()
+        static string Binzahl()
         {
             string Eingabe = "";
             bool keinFehler = true;
@@ -201,17 +178,15 @@ namespace Fork_4BEL_2010
 
             for (int i = 0; i < Eingabe.Length & keinFehler == true; i++)
             {
-                if(!(CEingabe[i] == '1' || CEingabe[i] == '0'))
+                if (!(CEingabe[i] == '1' || CEingabe[i] == '0'))
                 {
                     Eingabe = "Fehler";
                     keinFehler = false;
                 }
             }
             return Eingabe;
-=======
-        return Dezimalwert;
-    }
->>>>>>> 68ed56269f2dc869de1a77f0ca51700398071e5d
+        }
+
     }
 }
-}
+
