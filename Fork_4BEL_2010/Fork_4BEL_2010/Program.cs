@@ -3,6 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 // Umrechnung in verschiedene Zahlensysteme
+//Gruppe D
+//Thomas Zoeschg; Weiss Lukas; Stefan Unterholzner; Thomas Weithaler
+
+
 namespace Fork_4BEL_2010
 {
     class Program
@@ -11,6 +15,7 @@ namespace Fork_4BEL_2010
         {
             String Binaerwert = string.Empty;
             String Ausgabe = string.Empty;
+
             String AuswahlUmrechnung = start();
 
             switch (AuswahlUmrechnung)
@@ -23,6 +28,7 @@ namespace Fork_4BEL_2010
                     Binaerwert = Binzahl();
                     if (Binaerwert == "Fehler")
                     {
+                        AuswahlUmrechnung = "Fehler";
                         break;
                     }
                     else
@@ -35,6 +41,7 @@ namespace Fork_4BEL_2010
                     Binaerwert = Binzahl();
                     if (Binaerwert == "Fehler")
                     {
+                        AuswahlUmrechnung = "Fehler";
                         break;
                     }
                     else
@@ -44,15 +51,19 @@ namespace Fork_4BEL_2010
                     }
             }
 
-            Console.WriteLine("Ergebnis=" + Ausgabe + "");
+            if (!(AuswahlUmrechnung == "Fehler"))
+            {
+                Console.WriteLine("\nErgebnis=" + Ausgabe + "");
+            }
+
             Console.ReadKey();
         }
 
         /// <summary>
         /// Wandelt eine Binärzahl in eine Hexadezialzahl um
         /// </summary>
-        /// <param name="Bin"></param>
-        /// <returns></returns>
+        /// <param name="Bin">Der Methode muss die Binaerzahl als string uebergeben werden</param>
+        /// <returns>Gibt die Zahl zur Basisi 16 als string zurueck</returns>
         static string Hexmethode(String Bin)
         {
             String Hex = "";
@@ -101,6 +112,11 @@ namespace Fork_4BEL_2010
             return Hex;
         }
 
+        /// <summary>
+        /// Wandelt eine Binaerzahl zu einer Dezimalzahl um.
+        /// </summary>
+        /// <param name="a">Die Binaerzahl muss als string uebergeben werden</param>
+        /// <returns>Gibt die Umgewandelte Zahl als string zurueck</returns>
         static string Dezimalmethode(string a)
         {
 
@@ -135,12 +151,17 @@ namespace Fork_4BEL_2010
             return Dezimalwert;
         }
 
+        /// <summary>
+        /// Schreibt den Anfang der Benutzeroberflaeche auf die Konsole.
+        /// Liesst die Eingabe in welche Zahl umgewandelt wird ein.
+        /// </summary>
+        /// <returns>Gibt als String zurueck in welche Zahl umgewandelt werden soll.</returns>
         static string start()
         {
             Int16 Auswahl = 0;
             String Rueckgabe = string.Empty;
 
-            Console.WriteLine("Umrechnung von Binär in in Zahlen der Basis 10 der");
+            Console.WriteLine("Umrechnung von Binär in in Zahlen der Basis 10 oder der Basis 16");
 
             Console.WriteLine("In welches Zahlensystem moechten Sie umwandeln\n1 In Zahl zur Basis 10\n2 In Zahl zur Basis 16");
             while (!Int16.TryParse(Console.ReadLine(), out Auswahl) || Auswahl <= 0 || Auswahl >= 3)
@@ -165,6 +186,11 @@ namespace Fork_4BEL_2010
 
             return Rueckgabe;
         }
+
+        /// <summary>
+        /// Liest die Binaerzahl ein und Ueberprueft die Eingabe auf Fehler
+        /// </summary>
+        /// <returns>Gibt die Binaerzahl als String zurueck</returns>
         static string Binzahl()
         {
             string Eingabe = "";
@@ -182,6 +208,9 @@ namespace Fork_4BEL_2010
                 {
                     Eingabe = "Fehler";
                     keinFehler = false;
+                    Console.ForegroundColor = ConsoleColor.Red;
+                    Console.WriteLine("Die eingegebene Binaerzahl ist ungueltig.Beliebige Taste druecken.");
+                    Console.ForegroundColor = ConsoleColor.White;
                 }
             }
             return Eingabe;
